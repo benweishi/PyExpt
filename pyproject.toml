@@ -5,7 +5,10 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "PyExpt"
 version = "0.0.1"
+requires-python = ">=3.9"
 dependencies = [
+    "pandas",
+    "scikit-learn"
 ]
 
 [tool.setuptools]
