@@ -3,6 +3,8 @@ import numpy as np
 from itertools import product
 from sklearn.model_selection import ParameterGrid
 from sklearn.base import clone, BaseEstimator
+import matplotlib.pyplot as plt
+import seaborn as sns
 import time
 
 class Expt():
@@ -92,3 +94,12 @@ class Expt():
                         result |= self.measure_func(algorithm, dataset) | {'measure_time':time.time()-start_time}
                     self.results = pd.concat([self.results, pd.DataFrame([result])], ignore_index=True)
         return self
+
+    def plot(self, x_list, y_list, group):
+        """Plot the results."""
+        n_row = len(y_list)
+        n_col = len(x_list)
+        fig, axs = plt.subplots(n_row, n_col, squeeze=False, sharex=True, figsize=(0.5+5.5*n_col,0.5+3.5*n_row))
+        for r in range(n_row):
+            for c in range(n_col):
+                sns.lineplot(data=self.results, x=x_list[c], y=y_list[r], hue="alg", ax=axs[r, c])
