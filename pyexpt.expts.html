@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module pyexpt.expts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="pyexpt.html"><font color="#ffffff">pyexpt</font></a>.expts</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/benwei/Projects/My/PyExpt/src/pyexpt/expts.py">/home/benwei/Projects/My/PyExpt/src/pyexpt/expts.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+<a href="pandas.html">pandas</a><br>
+</td><td width="25%" valign=top><a href="matplotlib.pyplot.html">matplotlib.pyplot</a><br>
+<a href="seaborn.html">seaborn</a><br>
+</td><td width="25%" valign=top><a href="time.html">time</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="pyexpt.expts.html#Expt">Expt</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Expt">class <strong>Expt</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Expt">Expt</a>(run_func=None,&nbsp;alg_list=[],&nbsp;data_list=[],&nbsp;measure_func=None,&nbsp;alg_params={},&nbsp;data_params={},&nbsp;n_repeat=1,&nbsp;random_state=None)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+A&nbsp;class&nbsp;to&nbsp;run&nbsp;experiments.<br>
+Product&nbsp;run&nbsp;all&nbsp;algorithm&nbsp;in&nbsp;`alg_list`&nbsp;with&nbsp;all&nbsp;dataset&nbsp;in&nbsp;`data_list`,&nbsp;<br>
+try&nbsp;all&nbsp;params&nbsp;in&nbsp;`alg_params`&nbsp;and&nbsp;`data_params`,&nbsp;repeat&nbsp;`n_repeat`&nbsp;times.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+run_func&nbsp;:&nbsp;function(algorithm,&nbsp;dataset),&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;function&nbsp;to&nbsp;run&nbsp;the&nbsp;algorithm&nbsp;with&nbsp;the&nbsp;dataset.&nbsp;The&nbsp;default&nbsp;is&nbsp;None.<br>
+&nbsp;<br>
+alg_list&nbsp;:&nbsp;list&nbsp;of&nbsp;sklearn.base.BaseEstimator,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;list&nbsp;of&nbsp;algorithms&nbsp;to&nbsp;run.&nbsp;The&nbsp;default&nbsp;is&nbsp;[].<br>
+&nbsp;<br>
+data_list&nbsp;:&nbsp;list&nbsp;of&nbsp;sklearn.base.BaseEstimator,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;list&nbsp;of&nbsp;datasets&nbsp;to&nbsp;run.&nbsp;The&nbsp;default&nbsp;is&nbsp;[].<br>
+&nbsp;<br>
+measure_func&nbsp;:&nbsp;function(algorithm,&nbsp;dataset),&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;function&nbsp;to&nbsp;measure&nbsp;the&nbsp;performance&nbsp;of&nbsp;the&nbsp;algorithm&nbsp;with&nbsp;the&nbsp;dataset.&nbsp;The&nbsp;default&nbsp;is&nbsp;None.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;function&nbsp;should&nbsp;return&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;results.<br>
+&nbsp;<br>
+alg_params&nbsp;:&nbsp;dict,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;dictionary&nbsp;of&nbsp;parameters&nbsp;for&nbsp;the&nbsp;algorithms.&nbsp;The&nbsp;default&nbsp;is&nbsp;{}.<br>
+&nbsp;<br>
+data_params&nbsp;:&nbsp;dict,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;dictionary&nbsp;of&nbsp;parameters&nbsp;for&nbsp;the&nbsp;datasets.&nbsp;The&nbsp;default&nbsp;is&nbsp;{}.<br>
+&nbsp;<br>
+n_repeat&nbsp;:&nbsp;int,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;times&nbsp;to&nbsp;repeat&nbsp;the&nbsp;experiment,&nbsp;also&nbsp;is&nbsp;used&nbsp;as&nbsp;a&nbsp;part&nbsp;of&nbsp;the&nbsp;random_state&nbsp;for&nbsp;the&nbsp;dataset&nbsp;and&nbsp;the&nbsp;algorithm.&nbsp;The&nbsp;default&nbsp;is&nbsp;1.<br>
+&nbsp;<br>
+random_state&nbsp;:&nbsp;int,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Random&nbsp;seed.&nbsp;The&nbsp;default&nbsp;is&nbsp;None,&nbsp;which&nbsp;means&nbsp;to&nbsp;randomly&nbsp;generate&nbsp;one&nbsp;for&nbsp;each&nbsp;run.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;actural&nbsp;random&nbsp;seed&nbsp;is&nbsp;random_state&nbsp;+&nbsp;round.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Expt-__init__"><strong>__init__</strong></a>(self, run_func=None, alg_list=[], data_list=[], measure_func=None, alg_params={}, data_params={}, n_repeat=1, random_state=None) -&gt; None</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="Expt-plot"><strong>plot</strong></a>(self, x_list, y_list, group)</dt><dd><tt>Plot&nbsp;the&nbsp;results.</tt></dd></dl>
+
+<dl><dt><a name="Expt-run"><strong>run</strong></a>(self, n_repeat=None, random_state=None)</dt><dd><tt>Run&nbsp;the&nbsp;experiments&nbsp;and&nbsp;store&nbsp;the&nbsp;results&nbsp;in&nbsp;self.<strong>results</strong>&nbsp;as&nbsp;a&nbsp;`pandas.DataFrame`,<br>
+1&nbsp;row&nbsp;per&nbsp;experiment,&nbsp;with&nbsp;columns:&nbsp;<br>
+['round','alg','data','time']&nbsp;+&nbsp;alg_params.keys()&nbsp;+&nbsp;data_params.keys()&nbsp;+&nbsp;measure_func.keys().<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+n_repeat&nbsp;:&nbsp;int,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;times&nbsp;to&nbsp;repeat&nbsp;the&nbsp;experiment.&nbsp;The&nbsp;default&nbsp;is&nbsp;None,&nbsp;which&nbsp;means&nbsp;to&nbsp;use&nbsp;the&nbsp;value&nbsp;in&nbsp;self.<strong>n_repeat</strong>.<br>
+&nbsp;<br>
+random_state&nbsp;:&nbsp;int,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Random&nbsp;seed.&nbsp;The&nbsp;default&nbsp;is&nbsp;None,&nbsp;which&nbsp;means&nbsp;to&nbsp;use&nbsp;the&nbsp;value&nbsp;in&nbsp;self.<strong>random_state</strong>.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
