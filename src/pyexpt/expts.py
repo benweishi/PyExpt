@@ -77,7 +77,7 @@ class Expt():
                 else:
                     start_time = time.time()
                     dataset = clone(data).set_params(**data_params, random_state=random_state+r)
-                    result |= {'data':str(data), 'make_time':time.time()-start_time} | data_params
+                    result |= {'data':str(dataset), 'make_time':time.time()-start_time} | data_params
                 for alg, alg_params in product(self.alg_list, ParameterGrid(self.alg_params)):
                     if alg is None:
                         result |= {'alg':'None'}
